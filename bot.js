@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client  = new Discord.Client();
 
 const prefixo = '_';
-const token = 'NzMwNDYxMzY0ODAzNjAwNTAx.Xwh_fg._0Lh6G876p1teg4r2_fCJqFdmfA';
+const token = process.env.TOKEN || 'NzMwNDYxMzY0ODAzNjAwNTAx.XwiBEg.EFkwon97hw0jf7T8c-WoKbQOh74';
 ownerID = '729366493682466947'
 
 client.on('message', msg => {
@@ -34,4 +34,4 @@ client.on('message', msg => {
 
 client.on('ready', () => console.log('o bot foi iniciado com sucesso!'));
 
-client.login(process.env.TOKEN || token);
+client.login(token);
