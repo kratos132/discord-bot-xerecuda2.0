@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client  = new Discord.Client();
 
-const prefixo = '_';
-const token = process.env.TOKEN || 'NzMwNDYxMzY0ODAzNjAwNTAx.XwiBkQ.b9c3Bn8yIaWA_gPDHaA7TnUzdx8';
+const prefixo = '+';
+const token = process.env.TOKEN || 'NzMwNDYxMzY0ODAzNjAwNTAx.XwndFg.fHwuzliTc9qCVELC0YcF8SV11Xs';
 ownerID = '729366493682466947'
 
 client.on('message', msg => {
@@ -16,6 +16,7 @@ client.on('message', msg => {
     let cmd = args.shift().toLowerCase();
 
     if(msg.author.bot) return;
+    if(!msg.content.startsWith(prefixo)) return;
 
     try {
         
