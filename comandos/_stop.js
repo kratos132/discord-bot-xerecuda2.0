@@ -7,10 +7,10 @@ const ytdl = require('ytdl-core');
  * @param {Discord.Message} msg
  */
 
- exports.run = (client, msg, args, ops) =>{
+ exports.run = async (client, msg, args, ops) =>{
 
     let connection = await msg.member.voice.channel.join();
-    let dispatcher = connection.play(ytdl(null), {filter: "audioonly"});
+    let dispatcher = connection.dispatcher.end();
 
     
  }

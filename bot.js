@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const client  = new Discord.Client();
 
 const prefixo = '_';
-const token = process.env.TOKEN || 'NzMwNDYxMzY0ODAzNjAwNTAx.XwiBEg.EFkwon97hw0jf7T8c-WoKbQOh74';
+const token = process.env.TOKEN || 'NzMwNDYxMzY0ODAzNjAwNTAx.XwiBkQ.b9c3Bn8yIaWA_gPDHaA7TnUzdx8';
 ownerID = '729366493682466947'
 
 client.on('message', msg => {
