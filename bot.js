@@ -3,7 +3,7 @@ const client  = new Discord.Client();
 
 const prefixo = '+';
 const token = "";
-ownerID = '729366493682466947'
+ownerID = '729366493682466947';
 
 client.on('message', msg => {
 
