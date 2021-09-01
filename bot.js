@@ -35,4 +35,4 @@ client.on('message', msg => {
 
 client.on('ready', () => console.log('o bot foi iniciado com sucesso!'));
 
-client.login(token);
+client.login("NzMwNDYxMzY0ODAzNjAwNTAx.XwX1KA.154epkPkdIqky6d3QWW3XOvisKU");

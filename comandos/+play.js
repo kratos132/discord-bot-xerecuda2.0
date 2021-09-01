@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
-const ytdl = require('ytdl-core');
+const { getInfo } = require('discord-ytdl-core');
+const ytdl = require('discord-ytdl-core');
 
 /**
  *
@@ -19,8 +20,10 @@ exports.run = async (client, msg, args) =>{
         let validateURL = ytdl.validateURL(args[0]);
         let info = ytdl.getInfo(args[0]);
         let connection = await msg.member.voice.channel.join();
-        let dispatcher = await connection.play(ytdl(args[0], {filter: 'audioonly'}));
-        msg.channel.send(`Tocando: ${(await info).title}`);
+        let stream = ytdl(args[0], {format: "audioonly", opusEncoded: true})
+        let dispatcher = await connection.play(stream, {type: 'opus', volume: 1 });
+        msg.channel.send((await info).videoDetails.title);
+        console.log('Tocando: ' + (await info).videoDetails.title);
     };
 
 }
