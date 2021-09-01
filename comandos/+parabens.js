@@ -17,10 +17,10 @@ exports.run = async (client, msg, args) =>{
 
     }else {
 
-        let validateURL = ytdl.validateURL('https://www.youtube.com/watch?v=TG1perKO9j4');
-        let info = ytdl.getInfo('https://www.youtube.com/watch?v=TG1perKO9j4');
+        let validateURL = ytdl.validateURL('https://www.youtube.com/watch?v=b1mkFflMo9c');
+        let info = ytdl.getInfo('https://www.youtube.com/watch?v=b1mkFflMo9c');
         let connection = await msg.member.voice.channel.join();
-        let stream = ytdl('https://www.youtube.com/watch?v=TG1perKO9j4', {format: "audioonly", opusEncoded: true})
+        let stream = ytdl('https://www.youtube.com/watch?v=b1mkFflMo9c', {format: "audioonly", opusEncoded: true})
         let dispatcher = await connection.play(stream, {type: 'opus', volume: 1 });
         msg.channel.send("Parabéns Zé!");
         console.log("Parabéns Zé!");
