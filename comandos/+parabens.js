@@ -8,6 +8,7 @@ const ytdl = require('discord-ytdl-core');
  * @param {Discord.Message} msg
  */
 
+ const delay = ms => new Promise(res => setTimeout(res, ms));
 
 exports.run = async (client, msg, args) =>{
 
@@ -17,11 +18,11 @@ exports.run = async (client, msg, args) =>{
 
     }else {
 
-        let validateURL = ytdl.validateURL('https://www.youtube.com/watch?v=b1mkFflMo9c');
-        let info = ytdl.getInfo('https://www.youtube.com/watch?v=b1mkFflMo9c');
+        let validateURL = ytdl.validateURL('https://www.youtube.com/watch?v=14GjJSNxsp4');
+        let info = ytdl.getInfo('https://www.youtube.com/watch?v=14GjJSNxsp4');
+        let stream = ytdl('https://www.youtube.com/watch?v=14GjJSNxsp4', { opusEncoded: true, filter:  'audioonly'})
         let connection = await msg.member.voice.channel.join();
-        let stream = ytdl('https://www.youtube.com/watch?v=b1mkFflMo9c', {format: "audioonly", opusEncoded: true})
-        let dispatcher = await connection.play(stream, {type: 'opus', volume: 1 });
+        let dispatcher = connection.play(stream, {type: 'opus', volume: 100});
         msg.channel.send("Parabéns Zé!");
         console.log("Parabéns Zé!");
     };

@@ -34,7 +34,7 @@ const yts = require('yt-search');
 
       collector.once('collect', function(m){
          
-         let commandFile = require('./+play.js');
+         let commandFile = require('./+tocar.js');
          commandFile.run(client, msg, [this.videos[parseInt(m.content)-1].url], ops);
 
       });
