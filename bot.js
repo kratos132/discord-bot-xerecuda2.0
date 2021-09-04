@@ -33,10 +33,10 @@ client.on('message', msg => {
 
 });
 
-client.on('ready', () => 
-
-{console.log('o bot foi iniciado com sucesso!')
-client.user.setActivity("Depressivo. Digite +ajuda", {type: "STREAMING", url:"www.twitch.tv/renato_alcatra"});
+client.on('ready', () => {
+    
+    console.log('o bot foi iniciado com sucesso!')
+    client.user.setActivity("Tendo Depressão || +ajuda", {type: 'COMPETING' });
 
 });
 
