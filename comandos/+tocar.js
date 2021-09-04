@@ -29,11 +29,12 @@ exports.run = async (client, msg, args) =>{
         me.setTitle(`Tocando: ${(await info).videoDetails.title}`)
         .setColor('#1EB100')
         .setFooter('Foda-se, meu irmão')
-        .setThumbnail(`https://i.ytimg.com/vi/${(await info).videoDetails.videoId}/default.jpg`)
+        .setImage(`https://i.ytimg.com/vi_webp/${(await info).videoDetails.videoId}/maxresdefault.webp`)
         
         );
 
         console.log('Tocando: ' + (await info).videoDetails.title);
+        console.log((await info).videoDetails.thumbnails);
     };
 
 }
