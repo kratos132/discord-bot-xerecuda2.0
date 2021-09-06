@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
-const { getInfo } = require('discord-ytdl-core');
-const ytdl = require('discord-ytdl-core');
+const yts = require('yt-search');
 
 /**
  *
@@ -8,22 +7,24 @@ const ytdl = require('discord-ytdl-core');
  * @param {Discord.Message} msg
  */
 
+ exports.run = (client, msg, args, ops) => {
 
-exports.run = async (client, msg, args) =>{
+    yts(args.join(' '), function(err, res)  {
+       
+      if(err) throw err;
 
-    if(!msg.member.voice.channel.join()){
+      //let videos = res.videos.slice(0, 10)
 
-        return msg.channel.send("Você precisa estar em um canal de voz para usar o bot");
+      let stream = res.videos[0].url;
+      console.log(msg.content);
+      console.log(stream);
+      
+      let commandFile = require('./+tocarearrape');
+      commandFile.run(client, msg, stream, ops);
+      return;
 
-    }else {
+   });
 
-        let validateURL = ytdl.validateURL(args);
-        let info = ytdl.getInfo(args);
-        let connection = await msg.member.voice.channel.join();
-        let stream = ytdl(args, {filter: "audioonly", opusEncoded: true, encoderArgs: ['-af', 'bass=g=10']});
-        let dispatcher = connection.play(stream, {type: 'opus', volume: 100 });
-        msg.channel.send('Estourando os timpanos com: ' + (await info).videoDetails.title);
-        console.log('Estourando os timpanos com: ' + (await info).videoDetails.title);
-    };
 
-}
+ }
+
