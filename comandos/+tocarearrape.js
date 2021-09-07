@@ -25,7 +25,7 @@ exports.run = async (client, msg, args) =>{
         let dispatcher = connection.play(stream, {type: 'opus', volume: 100 });
         msg.channel.send(
 
-        me.setTitle(`Tocando: ${(await info).videoDetails.title}`)
+        me.setTitle(`Estourando timpanos com: ${(await info).videoDetails.title}`)
         .setColor('#1EB100')
         .setFooter('Foda-se, meu irmão')
         .setImage(`https://i.ytimg.com/vi_webp/${(await info).videoDetails.videoId}/maxresdefault.webp`)
