@@ -36,7 +36,7 @@ client.on('message', msg => {
 client.on('ready', () => {
     
     console.log('o bot foi iniciado com sucesso!')
-    client.user.setActivity("Tendo Depressão || +ajuda", {type: 'COMPETING' });
+    client.user.setActivity("Victory Royale #1 || +ajuda", {type: 'COMPETING' });
 
 });
 
