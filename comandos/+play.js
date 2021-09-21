@@ -15,7 +15,13 @@ const yts = require('yt-search');
 
       //let videos = res.videos.slice(0, 10)
 
-      let stream = res.videos[0].url;
+      if(msg.content.startsWith('https://')){
+
+        let stream = msg.content;
+
+      }else stream = res.videos[0].url;
+
+      //let stream = res.videos[0].url;
       console.log(msg.content);
       console.log(stream);
       

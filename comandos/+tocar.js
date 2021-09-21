@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const { getInfo } = require('discord-ytdl-core');
 const ytdl = require('discord-ytdl-core');
+const youtubedl = require("youtube-dl-exec")
 const me = new Discord.MessageEmbed();
 
 /**
@@ -17,13 +18,14 @@ exports.run = async (client, msg, args) =>{
         return msg.channel.send("Você precisa estar em um canal de voz para usar o bot");
 
     }else {
-
+        
         let validateURL = ytdl.validateURL(args);
         let info = ytdl.getInfo(args);
         let connection = await msg.member.voice.channel.join();
         let stream = ytdl(args, {filter: "audioonly", opusEncoded: true});
         let dispatcher = connection.play(stream, {type: 'opus', volume: 1 });
-
+        
+        
         msg.channel.send(
 
         me.setTitle(`Tocando: ${(await info).videoDetails.title}`)
